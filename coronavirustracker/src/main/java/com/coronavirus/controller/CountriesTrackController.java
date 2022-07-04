@@ -24,7 +24,7 @@ public class CountriesTrackController {
 	private static final String countriesApiurl = "https://disease.sh/v3/covid-19/countries";
 	private static final String IndiaApiurl = "https://api.rootnet.in/covid19-in/stats/latest";
 
-	@RequestMapping("/countriestracker")
+	@RequestMapping("/")
 	public ModelAndView returnCountriesdata() throws IOException, InterruptedException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("countriestracker");
