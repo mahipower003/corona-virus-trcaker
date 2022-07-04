@@ -161,11 +161,13 @@ body {
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<hr>
-			<p style="font-size:160%;">This is the Corona Virus Tracker which is using Real time data from Government sources and 
-			from other verified Sources. All the Data shown in Table and Map is Updated in 24 Hours of Span !! </p>
+			<p style="font-size: 160%;">This is the Corona Virus Tracker
+				which is using Real time data from Government sources and from other
+				verified Sources. All the Data shown in Table and Map is Updated in
+				24 Hours of Span !!</p>
 			<hr>
 			<div class="col">
 				<h1 class="center">India Corona-virus Tracker Map View</h1>
@@ -189,37 +191,37 @@ body {
 
 			<div class="col">
 				<br> <input type="text" id="stateInput"
-					style="font-size: 18pt; height: 40px; width: 1170px;"
-					onkeyup="myFunction()"
+					class="form-control flex-fill" onkeyup="myFunction()"
 					placeholder="Search Result State Name Wise...">
-
-				<table id="stateTable" class="table table-striped">
-					<br>
-					<br>
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">State Name</th>
-							<th scope="col">Foreign Cases Count</th>
-							<th scope="col">Indian Cases Count</th>
-							<th scope="col">Discharged Count</th>
-							<th scope="col">Total Deaths</th>
-							<th scope="col">Total Confirmed</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${lstIndialst}" var="Indiadata"
-							varStatus="loopCounter">
+				<div class="table-responsive">
+					<table id="stateTable" class="table table-striped table-responsive">
+						<br>
+						<br>
+						<thead class="thead-dark">
 							<tr>
-								<td><c:out value="${Indiadata.loc}" /></td>
-								<td><c:out value="${Indiadata.confirmedCasesIndian}" /></td>
-								<td><c:out value="${Indiadata.confirmedCasesForeign}" /></td>
-								<td><c:out value="${Indiadata.discharged}" /></td>
-								<td><c:out value="${Indiadata.deaths}" /></td>
-								<td><c:out value="${Indiadata.totalConfirmed}" /></td>
+								<th scope="col">State Name</th>
+								<th scope="col">Foreign Cases Count</th>
+								<th scope="col">Indian Cases Count</th>
+								<th scope="col">Discharged Count</th>
+								<th scope="col">Total Deaths</th>
+								<th scope="col">Total Confirmed</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						</thead>
+						<tbody>
+							<c:forEach items="${lstIndialst}" var="Indiadata"
+								varStatus="loopCounter">
+								<tr>
+									<td><c:out value="${Indiadata.loc}" /></td>
+									<td><c:out value="${Indiadata.confirmedCasesIndian}" /></td>
+									<td><c:out value="${Indiadata.confirmedCasesForeign}" /></td>
+									<td><c:out value="${Indiadata.discharged}" /></td>
+									<td><c:out value="${Indiadata.deaths}" /></td>
+									<td><c:out value="${Indiadata.totalConfirmed}" /></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
@@ -247,35 +249,35 @@ body {
 				</div>
 
 				<br> <input type="text" id="CountryInput"
-					style="font-size: 18pt; height: 40px; width: 1170px;"
-					onkeyup="myFunctionCountry()"
+					class="form-control flex-fill" onkeyup="myFunctionCountry()"
 					placeholder="Search Result Country Name Wise...">
-
-				<table id="CountryTable" class="table table-striped">
-					<br>
-					<br>
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">Country Name</th>
-							<th scope="col">Total Today Cases</th>
-							<th scope="col">Total Cases</th>
-							<th scope="col">Today's Deaths Count</th>
-							<th scope="col">Population</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${lstcountrylst}" var="CountryData"
-							varStatus="loopCounter">
+				<div class="table-responsive">
+					<table id="CountryTable" class="table table-striped">
+						<br>
+						<br>
+						<thead class="thead-dark">
 							<tr>
-								<td><c:out value="${CountryData.country}" /></td>
-								<td><c:out value="${CountryData.todayCases}" /></td>
-								<td><c:out value="${CountryData.cases}" /></td>
-								<td><c:out value="${CountryData.todayDeaths}" /></td>
-								<td><c:out value="${CountryData.population}" /></td>
+								<th scope="col">Country Name</th>
+								<th scope="col">Total Today Cases</th>
+								<th scope="col">Total Cases</th>
+								<th scope="col">Today's Deaths Count</th>
+								<th scope="col">Population</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						</thead>
+						<tbody>
+							<c:forEach items="${lstcountrylst}" var="CountryData"
+								varStatus="loopCounter">
+								<tr>
+									<td><c:out value="${CountryData.country}" /></td>
+									<td><c:out value="${CountryData.todayCases}" /></td>
+									<td><c:out value="${CountryData.cases}" /></td>
+									<td><c:out value="${CountryData.todayDeaths}" /></td>
+									<td><c:out value="${CountryData.population}" /></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
